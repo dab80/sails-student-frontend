@@ -57,7 +57,8 @@ module.exports = {
    /**
    * `StudentController.update()`
    */
-  update: function (req, res) {
+
+   update: function (req, res) {
 
     if(req.method != "POST"){
 
@@ -69,12 +70,15 @@ module.exports = {
 
     }else{
 
+      let studentId = req.body.student_id;
+      delete req.body.student_id;
+
       var args = {
           data: req.body,
           headers: { "Content-Type": "application/json" }
       };
 
-      client.put(endpoint + "/" + req.body.id, args, function (data, response) {
+      client.put(endpoint + "/" + studentId, args, function (data, response) {
 
         if(response.statusCode != "200"){
             req.addFlash("error", data.message);
@@ -88,7 +92,6 @@ module.exports = {
 
     }
   },
-
   /**
    * `StudentController.delete()`
    */

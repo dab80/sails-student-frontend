@@ -1,15 +1,24 @@
 body {
-    padding-top: 70px;
+  padding-top: 70px;
+  /*background-image: url("../assets/images/header_iy.jpg");
+  background-position: center;
+  background-size: cover;*/
 }
+
+
 /* Customize container */
+
 @media (min-width: 600px) {
-    .container {
-        max-width: 768px;
-    }
+  .container {
+    max-width: 768px;
+  }
 }
+
+
 /* Customize container */
+
 @media (min-width: 800px) {
-    .container-fluid {
-        max-width: 1024px;
-    }
+  .container-fluid {
+    max-width: 1024px;
+  }
 }

@@ -16,8 +16,8 @@
       <select id="student_id" name="student_id">
       <% if(typeof students != "undefined" && students.length > 0){ %>
         <% students.forEach(function(student){ %>
-          <option value="<%= student.student_id %>">
-            <%= student.last_name + ", " +  student.first_name %>
+          <option class="glyphicon glyphicon-user" aria-hidden="true" value="<%= student.student_id %>">
+            <%= "&nbsp; " + student.last_name + ", " +  student.first_name %>
           </option>
         <% }) %>
       <% } %>

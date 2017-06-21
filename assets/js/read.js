@@ -30,12 +30,27 @@
  *
  */
 
- (function(){
+(function() {
 
-   $(function(){
+  $(function() {
 
-   	//code goes here
+    // * 3. Using the DataTables plugin render the table on the page as a DataTable
+    $('#employeeTable').DataTable({
+      dom: 'Bfrtip',
+      // * 4. Use the buttons extention to enable the copy, csv, excel, pdf, and print
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
+      // * 5. Use the colReorder Plugin to add the ability to reorder columns
+      colReorder: true,
+      // * 6. The table should be able to scroll horizontal
+      // ajax:           '/api/data',
+      scrollX: true,
+      // deferRender:    true
+      // * 7. Use any other features you find interesting 	//code goes here
+      select: true
+    });
 
-   })
+  })
 
- })();
+})();

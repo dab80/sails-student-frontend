@@ -27,12 +27,30 @@
  *
  */
 
- (function(){
+(function() {
 
-   $(function(){
+  $(function() {
 
-   	//code goes here
+    //code goes here
+    // * 3. Using the bootstrap-selct plugin render dropdown on the page
+    $('#student_id').selectpicker({
 
-   })
+      // * 4. Use the live search functionality to make the dropdown searchable
+      liveSearch: true,
 
- })();
+      // * 7. Add a menu header to the dropdown
+      header: 'Select a student',
+
+      //This removes the first line and adds another header
+      title: 'Select a student',
+
+      // * 8. Customize further with anything you find intersting
+      style: 'btn-info',
+      size: 4
+    });
+
+    // (added in delete.ejs)* 5. Add the user glyphicons next to each student in the list
+
+  })
+
+})();

@@ -8,12 +8,13 @@
 
 <form action="#" method="">
   <div class="form-group">
-    <label for="employeeId">SELECT AN STUDENT TO UPDATE</label><br/>
+    <label for="employeeId">SELECT A STUDENT TO UPDATE</label><br/>
+    <!-- <select id="employeeId" title="Select a student" name="employeeId"> -->
     <select id="employeeId" name="employeeId">
     <% if(typeof students != "undefined" && students.length > 0){ %>
       <% students.forEach(function(student){ %>
-        <option value="<%= student.student_id %>">
-          <%= student.last_name + ", " +  student.first_name %>
+        <option class="glyphicon glyphicon-user" aria-hidden="true" value="<%= student.student_id %>">
+          <%= "&nbsp; " + student.last_name + ", " + student.first_name %>
         </option>
       <% }) %>
     <% } %>
@@ -37,9 +38,9 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="start_date" class="col-sm-2 control-label">Email Address</label>
+    <label for="start_date" class="col-sm-2 control-label">Start Date</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" id="start_date" name="start_date" placeholder="2017-01-01" required>
+      <input type="dateISO" class="form-control" id="start_date" name="start_date" placeholder="2017-01-01" required>
     </div>
   </div>
   <div class="form-group">
@@ -62,7 +63,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Update Student</button>
+      <button type="submit" class="btn btn-default" id="update_button">Update Student</button>
     </div>
   </div>
 </form>
